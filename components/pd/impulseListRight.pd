@@ -1,0 +1,9 @@
+#N canvas 641 454 450 300 10;
+#X obj 17 84 r bang_set;
+#X text 18 19 (These values can be automatically generated \, or you
+can manually set them yourself. In the latter case \, also make sure
+that the clone objects produce a number of copies equal to the number
+of pairs in the corresponding message).;
+#X msg 17 108 \; impulseListRight 0 1 \, 5 0.8 \, 10 0.6 \, 60 0.3
+\, 80 0.2 \, 100 0.1 \, 140 0.05 \, 180 0.01;
+#X connect 0 0 2 0;
