@@ -7,9 +7,9 @@
 #X text 25 61 Argument \$1: maxumum delay (ms).;
 #X text 24 26 playFileWet: starts playing sound according to specified
 impulse tables when inlet (bang) is triggered.;
-#X obj 28 118 s bang;
-#X obj 28 157 r bang;
-#X obj 205 157 r bang;
+#X obj 28 118 s bang_play_wet;
+#X obj 28 157 r bang_play_wet;
+#X obj 205 157 r bang_play_wet;
 #X connect 0 0 3 0;
 #X connect 1 0 7 0;
 #X connect 2 0 4 0;
