@@ -1,0 +1,55 @@
+#N canvas 0 23 450 609 10;
+#X obj 23 555 outlet~;
+#X obj 23 210 inlet;
+#X obj 23 238 unpack f f f;
+#X obj 65 310 inlet;
+#X obj 65 338 unpack f f f;
+#X obj 23 530 clone impulseRight 3;
+#X obj 23 462 pack;
+#X msg 23 484 next \$1 \$2;
+#X obj 128 463 pack;
+#X msg 128 485 next \$1 \$2;
+#X obj 237 463 pack;
+#X msg 237 485 next \$1 \$2;
+#X obj 65 368 s gain_r0;
+#X obj 129 368 s gain_r1;
+#X obj 195 368 s gain_r2;
+#X obj 81 267 s del_r1;
+#X obj 140 267 s del_r2;
+#X obj 23 267 s del_r0;
+#X obj 23 414 r del_r0;
+#X obj 44 437 r gain_r0;
+#X obj 128 415 r del_r1;
+#X obj 149 438 r gain_r1;
+#X obj 237 415 r del_r2;
+#X obj 258 438 r gain_r2;
+#X text 23 55 Inlet 1 (list of floats): delay amounts (ms).;
+#X text 23 79 Inlet 2 (list of floats): relative gains (likely between
+0 and 1).;
+#X text 22 159 This patch will also programmaticaly change depending
+on the number of impulses to set.;
+#X text 23 119 The length of each list should be the same. Even if
+they are not \, excess values will be ignored.;
+#X text 23 20 reverbRight: creates an impulse table for a reverberation
+in the right stereo channel.;
+#X connect 1 0 2 0;
+#X connect 2 0 17 0;
+#X connect 2 1 15 0;
+#X connect 2 2 16 0;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 4 1 13 0;
+#X connect 4 2 14 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;
+#X connect 10 0 11 0;
+#X connect 11 0 5 0;
+#X connect 18 0 6 0;
+#X connect 19 0 6 1;
+#X connect 20 0 8 0;
+#X connect 21 0 8 1;
+#X connect 22 0 10 0;
+#X connect 23 0 10 1;

@@ -1,0 +1,11 @@
+#N canvas 0 23 450 300 10;
+#X obj 28 139 tabplay~ file_ch1;
+#X obj 28 111 inlet;
+#X obj 168 139 tabplay~ file_ch2;
+#X text 24 45 playFileDry: plays the loaded sound without any reverb
+when the inlet (bang) is triggered.;
+#X obj 28 170 dac~;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 1;
