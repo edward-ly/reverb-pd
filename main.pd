@@ -1,7 +1,7 @@
-#N canvas 741 225 675 477 10;
+#N canvas 895 247 675 477 10;
 #X obj 26 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 302 269 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 302 318 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 25 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -13,7 +13,7 @@
 #X obj 24 406 table file_ch2;
 #X obj 302 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 302 211 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 302 260 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 50 115 <- (1) turn on/off audio;
 #X text 53 212 <- (2a) open audio file;
@@ -21,14 +21,18 @@
 #X text 26 68 Then you can use this patch to hear the reverb for any
 desired sound.;
 #X obj 302 143 components/pd/setReverb;
-#X obj 302 234 components/pd/playFileDry;
-#X obj 302 292 components/pd/playFileWet 5000;
-#X text 328 120 <- (3) set reverb impulse parameters;
-#X text 330 210 <- (4a) play file without reverb;
-#X text 330 268 <- (4b) play file with reverb;
+#X obj 302 283 components/pd/playFileDry;
+#X obj 302 341 components/pd/playFileWet 5000;
+#X text 330 259 <- (4a) play file without reverb;
+#X text 330 317 <- (4b) play file with reverb;
 #X text 26 20 Run the reverb generation program first to set the reverb
 parameters \, or open components/pd/setReverb to set them yourself.
 ;
+#X obj 302 176 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 302 199 s bang_clear;
+#X text 328 120 <- (3a) set impulse parameters;
+#X text 328 176 <- (3b) clear impulse parameters;
 #X connect 0 0 3 0;
 #X connect 1 0 17 0;
 #X connect 2 0 4 0;
@@ -36,3 +40,4 @@ parameters \, or open components/pd/setReverb to set them yourself.
 #X connect 6 0 5 0;
 #X connect 9 0 15 0;
 #X connect 10 0 16 0;
+#X connect 21 0 22 0;
