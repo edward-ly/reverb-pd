@@ -18,21 +18,21 @@
 #X text 50 115 <- (1) turn on/off audio;
 #X text 53 212 <- (2a) open audio file;
 #X text 21 343 (2b) click to preview file channels;
-#X text 330 210 <- (4a) play file w/o reverb;
-#X text 328 120 <- (3) click twice to set reverb impulse parameters
-;
-#X text 26 20 Run the reverb generation program first to set the reverb
-parameters.;
-#X text 26 59 Then you can use this patch to hear the reverb for any
+#X text 26 68 Then you can use this patch to hear the reverb for any
 desired sound.;
 #X obj 302 143 components/pd/setReverb;
 #X obj 302 234 components/pd/playFileDry;
 #X obj 302 292 components/pd/playFileWet 5000;
-#X text 330 268 <- (4b) play file w/ reverb;
+#X text 328 120 <- (3) set reverb impulse parameters;
+#X text 330 210 <- (4a) play file without reverb;
+#X text 330 268 <- (4b) play file with reverb;
+#X text 26 20 Run the reverb generation program first to set the reverb
+parameters \, or open components/pd/setReverb to set them yourself.
+;
 #X connect 0 0 3 0;
-#X connect 1 0 20 0;
+#X connect 1 0 17 0;
 #X connect 2 0 4 0;
 #X connect 4 0 6 0;
 #X connect 6 0 5 0;
-#X connect 9 0 18 0;
-#X connect 10 0 19 0;
+#X connect 9 0 15 0;
+#X connect 10 0 16 0;
