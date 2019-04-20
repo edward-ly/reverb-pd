@@ -1,13 +1,17 @@
-#N canvas 402 206 450 300 10;
-#X obj 28 139 tabplay~ file_ch1;
-#X obj 28 111 inlet;
-#X obj 205 139 tabplay~ file_ch2;
-#X obj 28 167 delwrite~ delayLeft \$1;
-#X obj 205 167 delwrite~ delayRight \$1;
-#X text 25 80 Argument \$1: maxumum delay (ms).;
-#X text 24 45 playFileWet: starts playing sound according to specified
+#N canvas 402 206 440 268 10;
+#X obj 28 181 tabplay~ file_ch1;
+#X obj 28 94 inlet;
+#X obj 205 181 tabplay~ file_ch2;
+#X obj 28 206 delwrite~ delayLeft \$1;
+#X obj 205 206 delwrite~ delayRight \$1;
+#X text 25 61 Argument \$1: maxumum delay (ms).;
+#X text 24 26 playFileWet: starts playing sound according to specified
 impulse tables when inlet (bang) is triggered.;
+#X obj 28 118 s bang;
+#X obj 28 157 r bang;
+#X obj 205 157 r bang;
 #X connect 0 0 3 0;
-#X connect 1 0 0 0;
-#X connect 1 0 2 0;
+#X connect 1 0 7 0;
 #X connect 2 0 4 0;
+#X connect 8 0 0 0;
+#X connect 9 0 2 0;

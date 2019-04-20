@@ -1,4 +1,4 @@
-#N canvas 378 133 439 477 10;
+#N canvas 603 337 439 477 10;
 #X obj 26 419 dac~;
 #X obj 26 137 inlet;
 #X text 24 27 setReverb: generates the impulse tables when triggered.
