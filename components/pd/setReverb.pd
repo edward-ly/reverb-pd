@@ -1,13 +1,7 @@
-#N canvas 281 282 439 477 10;
+#N canvas 281 282 503 477 10;
 #X obj 26 433 dac~;
 #X obj 26 151 inlet;
-#X text 24 27 setReverb: generates the impulse tables when triggered.
-;
-#X msg 26 241 0 1 \, 100 0.7 \, 200 0.4;
-#X msg 47 359 0 1 \, 100 0.7 \, 200 0.4;
-#X obj 26 290 clone impulseLeft 3;
 #X msg 26 265 next \$1 \$2;
-#X obj 47 408 clone impulseRight 3;
 #X msg 47 383 next \$1 \$2;
 #X obj 26 175 s bang_set;
 #X obj 26 217 r bang_set;
@@ -18,12 +12,20 @@ a list of pairs of delay/gain values \, one for each channel.;
 can manually set them yourself. In the latter case \, also make sure
 that the clone objects produce a number of copies equal to the number
 of pairs in the corresponding message).;
-#X connect 1 0 9 0;
-#X connect 3 0 6 0;
-#X connect 4 0 8 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 7 0 0 1;
-#X connect 8 0 7 0;
-#X connect 10 0 3 0;
-#X connect 11 0 4 0;
+#X obj 26 290 clone impulseLeft 8;
+#X obj 47 408 clone impulseRight 8;
+#X msg 26 241 0 1 \, 5 0.8 \, 10 0.6 \, 60 0.3 \, 80 0.2 \, 100 0.1
+\, 140 0.05 \, 180 0.01;
+#X msg 47 359 0 1 \, 5 0.8 \, 10 0.6 \, 60 0.3 \, 80 0.2 \, 100 0.1
+\, 140 0.05 \, 180 0.01;
+#X text 24 27 setReverb: generates the reverb impulses when triggered.
+;
+#X connect 1 0 4 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 5 0 11 0;
+#X connect 6 0 12 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 1;
+#X connect 11 0 2 0;
+#X connect 12 0 3 0;
