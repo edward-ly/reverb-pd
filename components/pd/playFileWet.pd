@@ -2,12 +2,12 @@
 #X obj 28 139 tabplay~ file_ch1;
 #X obj 28 111 inlet;
 #X obj 205 139 tabplay~ file_ch2;
-#X text 24 45 playFileWet: starts playing sound according to specified
-impulses when inlet (bang) is triggered.;
 #X obj 28 167 delwrite~ delayLeft \$1;
 #X obj 205 167 delwrite~ delayRight \$1;
 #X text 25 80 Argument \$1: maxumum delay (ms).;
-#X connect 0 0 4 0;
+#X text 24 45 playFileWet: starts playing sound according to specified
+impulse tables when inlet (bang) is triggered.;
+#X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 1 0 2 0;
-#X connect 2 0 5 0;
+#X connect 2 0 4 0;
