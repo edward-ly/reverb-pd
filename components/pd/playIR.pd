@@ -1,0 +1,15 @@
+#N canvas 0 23 450 300 10;
+#X obj 28 69 inlet;
+#X obj 28 234 dac~;
+#X text 23 23 playIR: plays the loaded impulse response when the inlet
+(bang) is triggered.;
+#X obj 28 92 s bang_play_ir;
+#X obj 28 133 r bang_play_ir;
+#X obj 49 185 r bang_play_ir;
+#X obj 28 156 tabplay~ ir_ch1;
+#X obj 49 209 tabplay~ ir_ch2;
+#X connect 0 0 3 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 1;

@@ -1,17 +1,19 @@
-#N canvas 402 206 440 268 10;
-#X obj 28 181 tabplay~ file_ch1;
-#X obj 28 94 inlet;
-#X obj 205 181 tabplay~ file_ch2;
-#X obj 28 206 delwrite~ delayLeft \$1;
-#X obj 205 206 delwrite~ delayRight \$1;
-#X text 25 61 Argument \$1: maxumum delay (ms).;
-#X text 24 26 playFileWet: starts playing sound according to specified
-impulse tables when inlet (bang) is triggered.;
-#X obj 28 118 s bang_play_wet;
-#X obj 28 157 r bang_play_wet;
-#X obj 205 157 r bang_play_wet;
-#X connect 0 0 3 0;
-#X connect 1 0 7 0;
+#N canvas 561 241 440 398 10;
+#X obj 28 78 inlet;
+#X obj 28 102 s bang_play_wet;
+#X obj 28 141 r bang_play_wet;
+#X obj 49 221 r bang_play_wet;
+#X obj 28 165 tabplay~ audio_ch1;
+#X obj 49 245 tabplay~ audio_ch2;
+#X text 25 26 playFileWet: plays the loaded audio file with the specified
+impulse response when inlet (bang) is triggered.;
+#X obj 28 302 dac~;
+#X obj 28 192 bsaylor/partconv~ ir_ch1 2048;
+#X obj 49 271 bsaylor/partconv~ ir_ch2 2048;
+#X connect 0 0 1 0;
 #X connect 2 0 4 0;
-#X connect 8 0 0 0;
-#X connect 9 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
