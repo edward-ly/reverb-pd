@@ -8,8 +8,8 @@
 #X text 25 26 playFileWet: plays the loaded audio file with the specified
 impulse response when inlet (bang) is triggered.;
 #X obj 28 302 dac~;
-#X obj 28 192 bsaylor/partconv~ ir_ch1 2048;
-#X obj 49 271 bsaylor/partconv~ ir_ch2 2048;
+#X obj 28 192 partconv~ ir_ch1 2048;
+#X obj 49 271 partconv~ ir_ch2 2048;
 #X connect 0 0 1 0;
 #X connect 2 0 4 0;
 #X connect 3 0 5 0;
